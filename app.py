@@ -13,4 +13,4 @@ st.write("Data from Google Sheets:")
 
 # Perform analysis or add interactive elements here
 st.write("Summary Statistics:")
-st.write(data.describe())
+
