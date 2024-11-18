@@ -6,17 +6,17 @@ from google.oauth2.service_account import Credentials
 
 
 # Load data and perform analysis
-st.title("Google Sheets Data Analysis App")
+st.title("Ubiweb Google Ads Predictor")
 
-st.write("Data from Google Sheets:")
+
 
 option = st.selectbox(
     "What would you like to do?",
     (
         "Select an option",
-        "1. View Dataset Summary",
-        "2. Perform Data Analysis",
-        "3. Exit"
+        "1. Predict Conversions",
+        "2. Predict Number of Clicks",
+        "3. Predict Cost Per Click"
     ),
 )
 
