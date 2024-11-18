@@ -22,17 +22,25 @@ option = st.selectbox(
 
 # Option 1: View Dataset Summary
 if option == "1. View Dataset Summary":
-    st.header("Dataset Summary")
-    # Example: Load a sample dataset
-    data = pd.DataFrame({
-        "Name": ["Alice", "Bob", "Charlie"],
-        "Age": [25, 30, 35],
-        "City": ["New York", "San Francisco", "Los Angeles"]
+    st.header("Predict Conversions")
+    
+    st.write("Enter the values for the following inputs to predict the number of conversions:")
+
+    # Take input from the user
+    clicks = st.number_input("Number of Clicks", min_value=0)
+    avg_cpc = st.number_input("Average CPC", min_value=0.0, format="%.2f")
+    impressions = st.number_input("Number of Impressions", min_value=0)
+
+    # Make predictions based on input
+    if st.button("Predict Conversions"):
+     new_data = pd.DataFrame({
+        'Clicks': [clicks],
+        'Avg. CPC': [avg_cpc],
+        'Impr.': [impressions]
     })
-    st.write("Here is a sample dataset:")
-    st.write(data)
-    st.write("Summary Statistics:")
-    st.write(data.describe())
+    predicted_conversions =  0.031134*clicks + -0.662742 * avg_cpc -0.000064*impressions + 12.1954
+    st.write(f"Predicted Conversions: {predicted_conversions}")
+
 
 # Option 2: Perform Data Analysis
 elif option == "2. Perform Data Analysis":
@@ -49,6 +57,6 @@ elif option == "3. Exit":
 else:
     st.write("Please select a valid option to proceed.")
 
-# Perform analysis or add interactive elements here
-st.write("Summary Statistics:")
+
+
 
