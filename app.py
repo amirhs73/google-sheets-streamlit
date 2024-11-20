@@ -5,6 +5,7 @@ from google.oauth2.service_account import Credentials
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
 import openpyxl
+pip install scikit-learn
 
 logo = "images.png"
 st.image(logo, width = 200)
