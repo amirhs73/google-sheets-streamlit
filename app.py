@@ -42,7 +42,8 @@ if option == "1. Predict Conversions":
     st.write(f"Predicted Conversions: {predicted_conversions}")
 
 
-'''# Option 2: Perform Data Analysis
+'''
+# Option 2: Perform Data Analysis
 elif option == "2. Predict Number of Clicks":
     st.header("Data Analysis")
     # Example: Generate a basic bar chart
