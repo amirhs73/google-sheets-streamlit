@@ -24,7 +24,7 @@ X = data[features]
 y = data['Conversions']
 
 # Train-test split
-#X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.02, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.02, random_state=42)
 
 
 
@@ -57,10 +57,11 @@ if option == "1. Predict Conversions":
         'Impr.': [impressions]
     })
     predicted_conversions =  0.031134*clicks + -0.662742 * avg_cpc -0.000064*impressions + 12.1954
-    #model = RandomForestRegressor(n_estimators=100, random_state=42)
-    #model.fit(X_train, y_train)
-    st.write(f"Predicted Conversions: {predicted_conversions}")
-
+    model = RandomForestRegressor(n_estimators=100, random_state=42)
+    model.fit(X_train, y_train)
+    predicted_conversions2 = model.predict(X_test)
+    st.write(f"Predicted Conversions based on linear regression: {predicted_conversions}")
+    st.write(f"Predicted Conversions based on random forest: {predicted_conversions2}")
 
 
 
