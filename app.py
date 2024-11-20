@@ -25,6 +25,7 @@ if option == "1. Predict Conversions":
     st.header("Predict Conversions")
     
     st.write("Enter the values for the following inputs to predict the number of conversions:")
+    st.write("ddddddd")
 
     # Take input from the user
     clicks = st.number_input("Number of Clicks", min_value=0)
