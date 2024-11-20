@@ -3,7 +3,7 @@ import pandas as pd
 import gspread
 from google.oauth2.service_account import Credentials
 
-logo = "Logo.jpeg"
+logo = "images.png"
 st.image(logo, width = 200)
 # Load data and perform analysis
 st.title("Ubiweb Google Ads Predictor")
