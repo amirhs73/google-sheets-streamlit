@@ -51,11 +51,7 @@ if option == "1. Predict Conversions":
 
     # Make predictions based on input
     if st.button("Predict Conversions"):
-    new_data = pd.DataFrame({
-            "Clicks": [clicks],
-            "Avg. CPC": [avg_cpc],
-            "Impr.": [impressions],
-        })
+    new_data = 2
     predicted_conversions =  0.031134*clicks + -0.662742 * avg_cpc -0.000064*impressions + 12.1954
     model = RandomForestRegressor(n_estimators=100, random_state=42)
     model.fit(X_train, y_train)
