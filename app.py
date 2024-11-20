@@ -22,7 +22,7 @@ data = pd.read_excel(file_url, engine='openpyxl')  # Specify engine='openpyxl' f
 features = ['Clicks', 'Avg. CPC', 'Impr.']
 X = data[features]
 y = data['Conversions']
-st.write(y)
+
 # Train-test split
 #X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.02, random_state=42)
 
