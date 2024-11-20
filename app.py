@@ -11,20 +11,20 @@ logo = "images.png"
 st.image(logo, width = 200)
 # Load data and perform analysis
 st.title("Google Ads Predictor")
-file_url = "https://github.com/amirhs73/-google-sheets-streamlit/blob/main/PPC%20Sales%20Collateral.xlsx"
+#file_url = "https://github.com/amirhs73/-google-sheets-streamlit/blob/main/PPC%20Sales%20Collateral.xlsx"
 
 # Load the Excel file
-data = pd.read_excel(file_url, engine='openpyxl')  # Specify engine='openpyxl' for .xlsx files
+#data = pd.read_excel(file_url, engine='openpyxl')  # Specify engine='openpyxl' for .xlsx files
 
 
 
 
-features = ['Clicks', 'Avg. CPC', 'Impr.']
-X = data[features]
-y = data['Conversions']
-print (y)
+#features = ['Clicks', 'Avg. CPC', 'Impr.']
+#X = data[features]
+#y = data['Conversions']
+#print (y)
 # Train-test split
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.02, random_state=42)
+#X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.02, random_state=42)
 
 
 
@@ -57,8 +57,8 @@ if option == "1. Predict Conversions":
         'Impr.': [impressions]
     })
     predicted_conversions =  0.031134*clicks + -0.662742 * avg_cpc -0.000064*impressions + 12.1954
-    model = RandomForestRegressor(n_estimators=100, random_state=42)
-    model.fit(X_train, y_train)
+    #model = RandomForestRegressor(n_estimators=100, random_state=42)
+    #model.fit(X_train, y_train)
     st.write(f"Predicted Conversions: {predicted_conversions}")
 
 
