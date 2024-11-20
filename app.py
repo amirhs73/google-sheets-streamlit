@@ -23,7 +23,6 @@ option = st.selectbox(
 # Option 1: View Dataset Summary
 if option == "1. Predict Conversions":
     st.header("Predict Conversions")
-    
     st.write("Enter the values for the following inputs to predict the number of conversions:")
     
 
@@ -43,21 +42,17 @@ if option == "1. Predict Conversions":
     st.write(f"Predicted Conversions: {predicted_conversions}")
 
 
-# Option 2: Perform Data Analysis
+'''# Option 2: Perform Data Analysis
 elif option == "2. Predict Number of Clicks":
     st.header("Data Analysis")
     # Example: Generate a basic bar chart
     st.write("This is an example analysis. Replace it with your actual analysis code.")
     st.bar_chart([1, 2, 3, 4, 5])  # Example chart
 
-# Option 3: Exit
-elif option == "3. Predict Cost Per Click":
-    st.write("Thank you for using the app! See you again!")
-
 # Default
 else:
     st.write("Please select a valid option to proceed.")
-
+'''
 
 
 
