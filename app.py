@@ -3,8 +3,8 @@ import pandas as pd
 import gspread
 from google.oauth2.service_account import Credentials
 
-
-
+logo = "https://github.com/amirhs73/-google-sheets-streamlit/blob/main/Logo.jpeg"
+st.image(logo, width=200)
 # Load data and perform analysis
 st.title("Ubiweb Google Ads Predictor")
 
