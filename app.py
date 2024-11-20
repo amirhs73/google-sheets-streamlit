@@ -11,7 +11,7 @@ logo = "images.png"
 st.image(logo, width = 200)
 
 st.title("Google Ads Predictor")
-file_url = "PPC Sales Collateral"
+file_url = "PPC Sales Collateral.xlsx"
 
 # Load the Excel file
 data = pd.read_excel(file_url, engine='openpyxl')  # Specify engine='openpyxl' for .xlsx files
