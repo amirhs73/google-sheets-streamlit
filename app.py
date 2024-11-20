@@ -2,11 +2,27 @@ import streamlit as st
 import pandas as pd
 import gspread
 from google.oauth2.service_account import Credentials
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestRegressor
 
 logo = "images.png"
 st.image(logo, width = 200)
 # Load data and perform analysis
 st.title("Google Ads Predictor")
+file_url = "https://github.com/amirhs73/-google-sheets-streamlit/blob/main/PPC%20Sales%20Collateral.xlsx"
+
+# Load the Excel file
+data = pd.read_excel(file_url, engine='openpyxl')  # Specify engine='openpyxl' for .xlsx files
+
+
+
+
+features = ['Clicks', 'Avg. CPC', 'Impr.']
+X = data[features]
+y = data["Conversions"]
+print (y)
+# Train-test split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
 
 
