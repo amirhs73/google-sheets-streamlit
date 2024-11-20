@@ -59,7 +59,7 @@ if option == "1. Predict Conversions":
     predicted_conversions =  0.031134*clicks + -0.662742 * avg_cpc -0.000064*impressions + 12.1954
     model = RandomForestRegressor(n_estimators=100, random_state=42)
     model.fit(X_train, y_train)
-    predicted_conversions2 = model.predict(X_test)
+    predicted_conversions2 = model.predict(X_test)[0]:.2f
     st.write(f"Predicted Conversions based on linear regression: {predicted_conversions}")
     st.write(f"Predicted Conversions based on random forest: {predicted_conversions2}")
 
