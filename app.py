@@ -25,7 +25,7 @@ if option == "1. Predict Conversions":
     st.header("Predict Conversions")
     
     st.write("Enter the values for the following inputs to predict the number of conversions:")
-    st.write("ddddddd")
+    
 
     # Take input from the user
     clicks = st.number_input("Number of Clicks", min_value=0)
@@ -44,14 +44,14 @@ if option == "1. Predict Conversions":
 
 
 # Option 2: Perform Data Analysis
-elif option == "2. Perform Data Analysis":
+elif option == "2. Predict Number of Clicks":
     st.header("Data Analysis")
     # Example: Generate a basic bar chart
     st.write("This is an example analysis. Replace it with your actual analysis code.")
     st.bar_chart([1, 2, 3, 4, 5])  # Example chart
 
 # Option 3: Exit
-elif option == "3. Exit":
+elif option == "3. Predict Cost Per Click":
     st.write("Thank you for using the app! See you again!")
 
 # Default
