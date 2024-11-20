@@ -4,6 +4,7 @@ import gspread
 from google.oauth2.service_account import Credentials
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
+import openpyxl
 
 logo = "images.png"
 st.image(logo, width = 200)
@@ -19,10 +20,10 @@ data = pd.read_excel(file_url, engine='openpyxl')  # Specify engine='openpyxl' f
 
 features = ['Clicks', 'Avg. CPC', 'Impr.']
 X = data[features]
-y = data["Conversions"]
+y = data['Conversions']
 print (y)
 # Train-test split
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.02, random_state=42)
 
 
 
