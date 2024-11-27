@@ -56,8 +56,8 @@ if option == "1. Predict Conversions":
      mean_prediction = np.mean(tree_predictions)
 
         # Calculate the prediction interval
-     lower_bound = mean_prediction - np.std(tree_predictions) * 1.5  # Approx. 95% confidence
-     upper_bound = mean_prediction + np.std(tree_predictions) * 1.5 
+     lower_bound = mean_prediction - np.std(tree_predictions) * 0.25  # Approx. 95% confidence
+     upper_bound = mean_prediction + np.std(tree_predictions) * 0.25 
 
         # Display results
      st.success(f"Predicted Conversions: {mean_prediction:.2f}")
