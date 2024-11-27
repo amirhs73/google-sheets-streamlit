@@ -5,27 +5,22 @@ from google.oauth2.service_account import Credentials
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
 import openpyxl
+import pickle
 
 
 logo = "images.png"
 st.image(logo, width = 200)
 
 st.title("Google Ads Predictor")
-file_url = "PPC Sales Collateral.xlsx"
 
-# Load the Excel file
-data = pd.read_excel(file_url, engine='openpyxl')  # Specify engine='openpyxl' for .xlsx files
+@st.cache
+def load_model():
+    with open("random_forest_model.pkl", "rb") as file:
+        model = pickle.load(file)
+    return model
 
 
-
-
-features = ['Clicks', 'Avg. CPC', 'Impr.']
-X = data[features]
-y = data['Conversions']
-
-# Train-test split
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.02, random_state=42)
-
+model = load_model()
 
 
 option = st.selectbox(
@@ -51,14 +46,18 @@ if option == "1. Predict Conversions":
 
     # Make predictions based on input
     if st.button("Predict Conversions"):
-    
+     input_data = pd.DataFrame({
+            "Clicks": [clicks],
+            "Impressions": [impressions],
+            "CPC": [avg_cpc]
+        })
      predicted_conversions =  0.031134*clicks + -0.662742 * avg_cpc -0.000064*impressions + 12.1954
-     model = RandomForestRegressor(n_estimators=100, random_state=42)
-     model.fit(X_train, y_train)
-     #predicted_conversions2 = model.predict(new_data)[0]
+     predicted_conversions2 = model.predict(input_data)
+     
+     
     
      st.write(f"Predicted Conversions based on linear regression: {predicted_conversions}")
-     #st.write(f"Predicted Conversions based on random forest: {predicted_conversions2}")
+     st.write(f"Predicted Conversions based on random forest: {predicted_conversions2}")
 
 
 
