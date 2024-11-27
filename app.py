@@ -61,7 +61,7 @@ if option == "1. Predict Conversions":
 
         # Display results
      st.success(f"Predicted Conversions: {mean_prediction:.2f}")
-     st.write(f"95% Prediction Interval: [{lower_bound:.2f}, {upper_bound:.2f}]")
+     st.write(f"Prediction Interval: [{lower_bound:.2f}, {upper_bound:.2f}]")
    
 
     
