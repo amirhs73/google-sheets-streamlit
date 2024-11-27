@@ -35,14 +35,14 @@ if option == "1. Predict Conversions":
     
 
     # Take input from the user
-    clicks = st.number_input("Number of Clicks", min_value=0)
+    clicks2 = st.number_input("Number of Clicks", min_value=0)
     avg_cpc = st.number_input("Average Cost Per Click", min_value=0.0, format="%.2f")
     impressions = st.number_input("Number of Impressions", min_value=0)
 
     # Make predictions based on input
     if st.button("Predict Conversions"):
      input_data = pd.DataFrame({
-            "Clicks": [clicks],
+            "Clicks": [clicks2],
             "Avg. CPC": [avg_cpc],
             "Impr.": [impressions],
         })
