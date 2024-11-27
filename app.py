@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import pickle
+import numpy as np
 
 
 logo = "images.png"
@@ -46,13 +47,26 @@ if option == "1. Predict Conversions":
             "Avg. CPC": [avg_cpc],
             "Impr.": [impressions],
         })
-     predicted_conversions =  0.031134*clicks2 + -0.662742 * avg_cpc -0.000064*impressions + 12.1954
+    
      predicted_conversions2 = model.predict(input_data)
-     
+      # Get individual tree predictions
+        tree_predictions = np.array([tree.predict(input_data)[0] for tree in model.estimators_])
+        
+        # Calculate the mean prediction
+        mean_prediction = np.mean(tree_predictions)
+
+        # Calculate the prediction interval
+        lower_bound = np.percentile(tree_predictions, 5)  # 5th percentile
+        upper_bound = np.percentile(tree_predictions, 95)  # 95th percentile
+
+        # Display results
+        st.success(f"Predicted Conversions: {mean_prediction:.2f}")
+        st.write(f"95% Prediction Interval: [{lower_bound:.2f}, {upper_bound:.2f}]")
+   
+
+    
      
     
-     st.write(f"Predicted Conversions based on linear regression: {predicted_conversions}")
-     st.write(f"Predicted Conversions based on random forest: {predicted_conversions2}")
 
 
 
