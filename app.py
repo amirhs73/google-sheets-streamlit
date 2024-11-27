@@ -46,7 +46,7 @@ if option == "1. Predict Conversions":
             "Avg. CPC": [avg_cpc],
             "Impr.": [impressions],
         })
-     predicted_conversions =  0.031134*clicks + -0.662742 * avg_cpc -0.000064*impressions + 12.1954
+     predicted_conversions =  0.031134*clicks2 + -0.662742 * avg_cpc -0.000064*impressions + 12.1954
      predicted_conversions2 = model.predict(input_data)
      
      
