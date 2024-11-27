@@ -50,18 +50,18 @@ if option == "1. Predict Conversions":
     
      predicted_conversions2 = model.predict(input_data)
       # Get individual tree predictions
-        tree_predictions = np.array([tree.predict(input_data)[0] for tree in model.estimators_])
+     tree_predictions = np.array([tree.predict(input_data)[0] for tree in model.estimators_])
         
         # Calculate the mean prediction
-        mean_prediction = np.mean(tree_predictions)
+     mean_prediction = np.mean(tree_predictions)
 
         # Calculate the prediction interval
-        lower_bound = np.percentile(tree_predictions, 5)  # 5th percentile
-        upper_bound = np.percentile(tree_predictions, 95)  # 95th percentile
+     lower_bound = np.percentile(tree_predictions, 5)  # 5th percentile
+     upper_bound = np.percentile(tree_predictions, 95)  # 95th percentile
 
         # Display results
-        st.success(f"Predicted Conversions: {mean_prediction:.2f}")
-        st.write(f"95% Prediction Interval: [{lower_bound:.2f}, {upper_bound:.2f}]")
+     st.success(f"Predicted Conversions: {mean_prediction:.2f}")
+     st.write(f"95% Prediction Interval: [{lower_bound:.2f}, {upper_bound:.2f}]")
    
 
     
