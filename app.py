@@ -1,10 +1,5 @@
 import streamlit as st
 import pandas as pd
-import gspread
-from google.oauth2.service_account import Credentials
-from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestRegressor
-import openpyxl
 import pickle
 
 
@@ -13,7 +8,7 @@ st.image(logo, width = 200)
 
 st.title("Google Ads Predictor")
 
-@st.cache
+
 def load_model():
     with open("random_forest_model.pkl", "rb") as file:
         model = pickle.load(file)
