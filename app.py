@@ -23,22 +23,24 @@ option = st.selectbox(
     "What would you like to do?",
     (
         "Select an option",
-        "1. Predict Conversions",
-        "2. Predict Number of Clicks",
-        "3. Predict Cost Per Click"
+        "1. Predict cost per click and conversions",
+        "2. Predict the best keywords"
     ),
 )
 
 # Option 1: View Dataset Summary
-if option == "1. Predict Conversions":
-    st.header("Predict Conversions")
+if option == "1. Predict cost per click and conversions":
+    st.header("1. Predict cost per click and conversions")
     st.write("Enter the values for the following inputs to predict the number of conversions:")
     
 
     # Take input from the user
     clicks2 = st.number_input("Number of Clicks", min_value=0)
     avg_cpc = st.number_input("Average Cost Per Click", min_value=0.0, format="%.2f")
-    impressions = st.number_input("Number of Impressions", min_value=0)
+    location = st.selectbox(
+    "Select your location:",
+    ["Location A", "Location B", "Location C"]
+)
 
     # Make predictions based on input
     if st.button("Predict Conversions"):
