@@ -41,7 +41,7 @@ if option == "1. Predict Number of Potential Clicks, Cost Per Click, and Convers
     Cost = st.number_input("How Much The Client Wants To Spend Per Month?", min_value=0)
     location = st.selectbox(
     "Select the Location of Their Campaign:",
-    ["Toronto, Montreal, Vancouver or USA", "Brossard, Longueuil, Rive Sud, Laval, West Island, Hamilton, Ottawa, Quebec City, Oshawa, Kitchener, Edmonton, Winnipeg, Calgary ", 
+    ["Toronto, Montreal, Vancouver or USA", "Brossard, Longueuil, Rive Sud, Laval, West Island, Hamilton, Ottawa, Quebec City, Oshawa, Kitchener, Edmonton, Winnipeg, Calgary, Victoria", 
      "All Other Places (Less Populated Cities and Rural Areas)"]
     )
     Industry = st.selectbox(
