@@ -24,7 +24,7 @@ option = st.selectbox(
     (
         "Select an option",
         "1. Predict Number of Potential Clicks, Cost Per Click And Conversions",
-        "2. Predict the best keywords"
+        "2. Predict the Best Keywords"
     ),
 )
 
@@ -84,9 +84,9 @@ if option == "1. Predict Number of Potential Clicks, Cost Per Click And Conversi
      st.success(f"Predicted Conversions: {mean_prediction:.2f}")
      st.write(f"Prediction Interval: [{lower_bound:.2f}, {upper_bound:.2f}]")
    
-
+if option == "2. Predict the Best Keywords":
     
-     
+    st.header("In Production ...")
     
 
 
