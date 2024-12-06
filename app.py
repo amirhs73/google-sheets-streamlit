@@ -37,12 +37,28 @@ if option == "1. Predict Cost Per Click And Conversions":
     # Take input from the user
     clicks2 = st.number_input("Number of Clicks", min_value=0)
     avg_cpc = st.number_input("Average Cost Per Click", min_value=0.0, format="%.2f")
+    
     Cost = st.number_input("How Much The Client Wants To Spend Per Month?", min_value=0)
     location = st.selectbox(
     "Select the Location of Your Campaign:",
-    ["Toronto, Montreal, Vancouver or USA", "Brossard, Longueuil, Rive Sud, Laval, West Island, Hamilton, Ottawa, Quebec City, Oshawa, Kitchener, Edmonton, Winnipeg, Calgary ", "All Other Places (Less Populated Cities and Rural Areas)"]
-)
+    ["Toronto, Montreal, Vancouver or USA", "Brossard, Longueuil, Rive Sud, Laval, West Island, Hamilton, Ottawa, Quebec City, Oshawa, Kitchener, Edmonton, Winnipeg, Calgary ", 
+     "All Other Places (Less Populated Cities and Rural Areas)"]
+    )
+    Industry = st.selectbox(
+    "Select the Industry of Your Campaign:",
+    ["Roofer", "Construction", "Excavator", "Hvac", "Renovation", "Cleaning", "Tree Services", "Plumber", "Moving Services", "Landscaper", "Car Mechanic", "Flooring", "Electrician", 
+     "Doors & Windows", "Paving Exterminator", "Concrete", "Insulation" ,"Painter", "Transport","Dentist", "Lawyer", "Home Inspection", "Tools","Cabinets""Disposal", 
+     "Designer", "Training", "Welder", "Well Drilling", "Fence", "Machine Shop", "Lighting", "Glass", "Hydraulic equipment", "Printer", "Water Softener", "Clinic",
+     "Boxes", "Marketing", "Bookkeeping", "Signs", "Medical Supplies", "Fireplace", "Car Aesthetic", "Ceramic", "Repair Household Items", "Real Estate", "Cloth", "Container","Crane rental",
+     "Tank Cleaning", "Security", "Restaurant Equipment", "Room Rental", "Sauna", "Property Management", "Sleeping Disorders", "Watch Store", "Sport", "Warehouse", "Tent Rental",
+     "Tire store", "Towing", "Film Maker", "Alarm Systems", "Land Surveyor", "Portable Toilet - Rental", "Irrigation", "Car Battery", "Car Painting", "Car Shop", "Car Wash", "Casino",
+     "Chiropractor", "Commercial Fire Sprinklers", "Framing Store", "Insurance","Kennel", "Pools", "Animal Clinic","Lock", "Manufacturing", "Microelectronics", "Natural Gas Dealer",
+     "Trophy Builder", "Packaging", "Party", "Pompes", "Wood "]
+    )
 
+
+
+    
     # Make predictions based on input
     if st.button("Predict Conversions"):
      input_data = pd.DataFrame({
