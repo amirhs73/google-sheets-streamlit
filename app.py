@@ -39,7 +39,7 @@ if option == "1. Predict Cost Per Click And Conversions":
     avg_cpc = st.number_input("Average Cost Per Click", min_value=0.0, format="%.2f")
     location = st.selectbox(
     "Select your location:",
-    ["Toronto, Montreal, Vancouver or USA", "Brossard, Longueuil, Rive Sud, Laval, West Island, Hamilton, Ottawa, Quebec City, Oshawa, Kitchener, Edmonton, Winnipeg, Calgary ", "All Other Places"]
+    ["Toronto, Montreal, Vancouver or USA", "Brossard, Longueuil, Rive Sud, Laval, West Island, Hamilton, Ottawa, Quebec City, Oshawa, Kitchener, Edmonton, Winnipeg, Calgary ", "All Other Places (Less Populated Cities and Rural Areas)"]
 )
 
     # Make predictions based on input
