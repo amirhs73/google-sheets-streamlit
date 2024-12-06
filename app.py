@@ -56,7 +56,10 @@ if option == "1. Predict Number of Potential Clicks, Cost Per Click, and Convers
      "Trophy Builder", "Packaging", "Party", "Pompes", "Wood "]
     )
 
-
+    Season = st.selectbox(
+    "Select the Season of Their Campaign:",
+    ["Winter", "Summer"]
+    )
 
     
     # Make predictions based on input
