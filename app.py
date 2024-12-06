@@ -44,6 +44,11 @@ if option == "1. Predict Number of Potential Clicks, Cost Per Click, and Convers
     ["Toronto, Montreal, Vancouver or USA", "Brossard, Longueuil, Rive Sud, Laval, West Island, Hamilton, Ottawa, Quebec City, Oshawa, Kitchener, Edmonton, Winnipeg, Calgary, Victoria", 
      "All Other Places (Less Populated Cities and Rural Areas)"]
     )
+    Season = st.selectbox(
+    "Select the Season of Their Campaign:",
+    ["Winter", "Summer"]
+    )
+
     Industry = st.selectbox(
     "Select the Industry of Their Campaign:",
     ["Roofer", "Construction", "Excavator", "Hvac", "Renovation", "Cleaning", "Tree Services", "Plumber", "Moving Services", "Landscaper", "Car Mechanic", "Flooring", "Electrician", 
@@ -54,13 +59,9 @@ if option == "1. Predict Number of Potential Clicks, Cost Per Click, and Convers
      "Tire store", "Towing", "Film Maker", "Alarm Systems", "Land Surveyor", "Portable Toilet - Rental", "Irrigation", "Car Battery", "Car Painting", "Car Shop", "Car Wash", "Casino",
      "Chiropractor", "Commercial Fire Sprinklers", "Framing Store", "Insurance","Kennel", "Pools", "Animal Clinic","Lock", "Manufacturing", "Microelectronics", "Natural Gas Dealer",
      "Trophy Builder", "Packaging", "Party", "Pompes", "Wood "]
-    )
+     )
 
-    Season = st.selectbox(
-    "Select the Season of Their Campaign:",
-    ["Winter", "Summer"]
-    )
-
+    
     
     # Make predictions based on input
     if st.button("Predict Conversions"):
