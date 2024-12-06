@@ -37,6 +37,7 @@ if option == "1. Predict Cost Per Click And Conversions":
     # Take input from the user
     clicks2 = st.number_input("Number of Clicks", min_value=0)
     avg_cpc = st.number_input("Average Cost Per Click", min_value=0.0, format="%.2f")
+    Cost = st.number_input("How Much The Client Wants To Spend Per Month?", min_value=0)
     location = st.selectbox(
     "Select the Location of Your Campaign:",
     ["Toronto, Montreal, Vancouver or USA", "Brossard, Longueuil, Rive Sud, Laval, West Island, Hamilton, Ottawa, Quebec City, Oshawa, Kitchener, Edmonton, Winnipeg, Calgary ", "All Other Places (Less Populated Cities and Rural Areas)"]
