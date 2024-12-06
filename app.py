@@ -29,7 +29,7 @@ option = st.selectbox(
 )
 
 # Option 1: View Dataset Summary
-if option == "1. Predict Number of Potential Clicks, Cost Per Click And Conversions":
+if option == "1. Predict Number of Potential Clicks, Cost Per Click, and Conversions":
     st.header("Predict Number of Potential Clicks, Cost Per Click And Conversions")
     st.write("Enter the values for the following inputs to predict the outcome:")
     
