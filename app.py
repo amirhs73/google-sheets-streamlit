@@ -23,7 +23,7 @@ option = st.selectbox(
     "What would you like to do?",
     (
         "Select an option",
-        "1. Predict Number of Potential Clicks, Cost Per Click And Conversions",
+        "1. Predict Number of Potential Clicks, Cost Per Click, And Conversions",
         "2. Predict the Best Keywords"
     ),
 )
