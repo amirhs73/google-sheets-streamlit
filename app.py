@@ -40,12 +40,12 @@ if option == "1. Predict Cost Per Click And Conversions":
     
     Cost = st.number_input("How Much The Client Wants To Spend Per Month?", min_value=0)
     location = st.selectbox(
-    "Select the Location of Your Campaign:",
+    "Select the Location of Their Campaign:",
     ["Toronto, Montreal, Vancouver or USA", "Brossard, Longueuil, Rive Sud, Laval, West Island, Hamilton, Ottawa, Quebec City, Oshawa, Kitchener, Edmonton, Winnipeg, Calgary ", 
      "All Other Places (Less Populated Cities and Rural Areas)"]
     )
     Industry = st.selectbox(
-    "Select the Industry of Your Campaign:",
+    "Select the Industry of Their Campaign:",
     ["Roofer", "Construction", "Excavator", "Hvac", "Renovation", "Cleaning", "Tree Services", "Plumber", "Moving Services", "Landscaper", "Car Mechanic", "Flooring", "Electrician", 
      "Doors & Windows", "Paving Exterminator", "Concrete", "Insulation" ,"Painter", "Transport","Dentist", "Lawyer", "Home Inspection", "Tools","Cabinets""Disposal", 
      "Designer", "Training", "Welder", "Well Drilling", "Fence", "Machine Shop", "Lighting", "Glass", "Hydraulic equipment", "Printer", "Water Softener", "Clinic",
