@@ -58,7 +58,7 @@ if option == "1. Predict Number of Potential Clicks, Cost Per Click, and Convers
      "Printer Contractor", "Water Softener Shop", "Clinic", "Box Creator", "Other Industries"]
      )
 
-    
+    'Box Creator': 0, 'Car Mechanic': 1, 'Cleaning': 2, 'Clinic': 3, 'Concrete': 4, 'Construction': 5, 'Dentist': 6, 'Disposal': 7, 'Doors & Windows': 8, 'Electrician': 9, 'Excavator': 10, 'Exterminator': 11, 'Flooring': 12, 'Glass': 13, 'Home Cabinets': 14, 'Home Designer': 15, 'Home Inspection': 16, 'Hvac': 17, 'Insulation': 18, 'Landscaper': 19, 'Lawyer': 20, 'Lighting': 21, 'Machine Shop': 22, 'Moving Services': 23, 'Other Industries': 24, 'Painter': 25, 'Paving': 26, 'Plumber': 27, 'Printer Contractor': 28, 'Renovation': 29, 'Roofer': 30, 'Tools': 31, 'Training Classes': 32, 'Transport': 33, 'Tree Services': 34, 'Water Softener Shop': 35, 'Welder': 36, 'Well Drilling': 37}
     
     # Make predictions based on input
     if st.button("Predict Conversions"):
