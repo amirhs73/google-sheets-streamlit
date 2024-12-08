@@ -51,14 +51,11 @@ if option == "1. Predict Number of Potential Clicks, Cost Per Click, and Convers
 
     Industry = st.selectbox(
     "Select the Industry of Their Campaign:",
-    ["Roofer", "Construction", "Excavator", "Hvac", "Renovation", "Cleaning", "Tree Services", "Plumber", "Moving Services", "Landscaper", "Car Mechanic", "Flooring", "Electrician", 
-     "Doors & Windows", "Paving Exterminator", "Concrete", "Insulation" ,"Painter", "Transport","Dentist", "Lawyer", "Home Inspection", "Tools","Cabinets""Disposal", 
-     "Designer", "Training", "Welder", "Well Drilling", "Fence", "Machine Shop", "Lighting", "Glass", "Hydraulic equipment", "Printer", "Water Softener", "Clinic",
-     "Boxes", "Marketing", "Bookkeeping", "Signs", "Medical Supplies", "Fireplace", "Car Aesthetic", "Ceramic", "Repair Household Items", "Real Estate", "Cloth", "Container","Crane rental",
-     "Tank Cleaning", "Security", "Restaurant Equipment", "Room Rental", "Sauna", "Property Management", "Sleeping Disorders", "Watch Store", "Sport", "Warehouse", "Tent Rental",
-     "Tire store", "Towing", "Film Maker", "Alarm Systems", "Land Surveyor", "Portable Toilet - Rental", "Irrigation", "Car Battery", "Car Painting", "Car Shop", "Car Wash", "Casino",
-     "Chiropractor", "Commercial Fire Sprinklers", "Framing Store", "Insurance","Kennel", "Pools", "Animal Clinic","Lock", "Manufacturing", "Microelectronics", "Natural Gas Dealer",
-     "Trophy Builder", "Packaging", "Party", "Pompes", "Wood "]
+    ["Roofer", "Construction", "Excavator", "Hvac", "Renovation", "Cleaning", "Tree Services", "Plumber", "Moving Services", 
+     "Landscaper", "Car Mechanic", "Flooring", "Electrician", "Doors & Windows", "Paving", "Exterminator", "Concrete", "Insulation",
+     "Painter", "Transport","Dentist", "Lawyer", "Home Inspection", "Tools", "Home Cabinets", "Disposal", 
+     "Home Designer", "Training Classes", "Welder", "Well Drilling", "Machine Shop", "Lighting", "Glass",
+     "Printer Contractor", "Water Softener Shop", "Clinic", "Box Creator", "Other Industries"]
      )
 
     
