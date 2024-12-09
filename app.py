@@ -4,12 +4,7 @@ import pickle
 import numpy as np
 import os
 
-def load_model():
-    current_dir = os.path.dirname(os.path.abspath(__file__))  # Get the current script directory
-    model_path = os.path.join(current_dir, "random_forest_model.pkl")  # Build full path
-    with open(model_path, "rb") as file:
-        model = pickle.load(file)
-    return model
+
 
 logo = "images.png"
 st.image(logo, width = 200)
