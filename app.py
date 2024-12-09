@@ -14,7 +14,7 @@ st.title("Google Ads Predictor")
 
 
 def load_model():
-    model_path = ''
+    model_path = 'https://github.com/amirhs73/google-sheets-streamlit/blob/main/random_forest_model.pkl'
     with open(model_path, "rb") as file:
         model = pickle.load(file)
     return model
