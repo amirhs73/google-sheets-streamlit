@@ -12,13 +12,7 @@ st.image(logo, width = 200)
 st.title("Google Ads Predictor")
 
 
-def load_model():
-    model_path = "random_forest_model.pkl"
-    with open(model_path, "rb") as file:
-     model = pickle.load(file)
-    return model
 
-model = load_model()
 
 
 
