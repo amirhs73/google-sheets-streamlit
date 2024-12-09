@@ -50,6 +50,7 @@ if option == "1. Predict Number of Potential Clicks, Cost Per Click, and Convers
     "Select the Location of Their Campaign:",
     list(location_mapping.keys()) 
     )
+    numeric_location = location_mapping[Location]
     Season = st.selectbox(
     "Select the Season of Their Campaign:",
     ["Winter", "Summer"]
@@ -74,13 +75,13 @@ if option == "1. Predict Number of Potential Clicks, Cost Per Click, and Convers
     Industry = st.selectbox(
     "Select The Industry of Their Campaign:",
     list(industry_mapping.keys()) )  # Display industry names in the dropdown
-    
+    numeric_industry = industry_mapping[Industry]
     # Make predictions based on input
     if st.button("Predict Conversions"):
      input_data = pd.DataFrame({
             "Cost": [Cost],
-            "Location ID": [Location],
-            "Industry_encoded": [Industry],
+            "Location ID": [numeric_location],
+            "Industry_encoded": [numeric_industry],
         })
     
      predicted_conversions2 = model.predict(input_data)
