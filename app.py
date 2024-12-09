@@ -79,8 +79,8 @@ if option == "1. Predict Number of Potential Clicks, Cost Per Click, and Convers
     if st.button("Predict Conversions"):
      input_data = pd.DataFrame({
             "Cost": [Cost],
-            "Location": [Location],
-            "Industry": [Industry],
+            "Location ID": [Location],
+            "Industry_encoded": [Industry],
         })
     
      predicted_conversions2 = model.predict(input_data)
