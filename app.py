@@ -39,33 +39,44 @@ if option == "1. Predict Number of Potential Clicks, Cost Per Click, and Convers
     #avg_cpc = st.number_input("Average Cost Per Click", min_value=0.0, format="%.2f")
     
     Cost = st.number_input("How Much The Client Wants To Spend Per Month?", min_value=0)
-    location = st.selectbox(
+
+    location_mapping = { "Toronto, Montreal, Vancouver or USA" : 1, "Brossard, Longueuil, Rive Sud, Laval, West Island, Hamilton, Ottawa, Quebec City, Oshawa, Kitchener, Edmonton, Winnipeg, Calgary, Victoria":2, 
+     "All Other Places (Less Populated Cities and Rural Areas)":3}
+    Location = st.selectbox(
     "Select the Location of Their Campaign:",
-    ["Toronto, Montreal, Vancouver or USA", "Brossard, Longueuil, Rive Sud, Laval, West Island, Hamilton, Ottawa, Quebec City, Oshawa, Kitchener, Edmonton, Winnipeg, Calgary, Victoria", 
-     "All Other Places (Less Populated Cities and Rural Areas)"]
+    list(location_mapping.keys()) 
     )
     Season = st.selectbox(
     "Select the Season of Their Campaign:",
     ["Winter", "Summer"]
     )
 
-    Industry = st.selectbox(
-    "Select the Industry of Their Campaign:",
-    ["Roofer", "Construction", "Excavator", "Hvac", "Renovation", "Cleaning", "Tree Services", "Plumber", "Moving Services", 
-     "Landscaper", "Car Mechanic", "Flooring", "Electrician", "Doors & Windows", "Paving", "Exterminator", "Concrete", "Insulation",
-     "Painter", "Transport","Dentist", "Lawyer", "Home Inspection", "Tools", "Home Cabinets", "Disposal", 
-     "Home Designer", "Training Classes", "Welder", "Well Drilling", "Machine Shop", "Lighting", "Glass",
-     "Printer Contractor", "Water Softener Shop", "Clinic", "Box Creator", "Other Industries"]
-     )
+  
 
-    'Box Creator': 0, 'Car Mechanic': 1, 'Cleaning': 2, 'Clinic': 3, 'Concrete': 4, 'Construction': 5, 'Dentist': 6, 'Disposal': 7, 'Doors & Windows': 8, 'Electrician': 9, 'Excavator': 10, 'Exterminator': 11, 'Flooring': 12, 'Glass': 13, 'Home Cabinets': 14, 'Home Designer': 15, 'Home Inspection': 16, 'Hvac': 17, 'Insulation': 18, 'Landscaper': 19, 'Lawyer': 20, 'Lighting': 21, 'Machine Shop': 22, 'Moving Services': 23, 'Other Industries': 24, 'Painter': 25, 'Paving': 26, 'Plumber': 27, 'Printer Contractor': 28, 'Renovation': 29, 'Roofer': 30, 'Tools': 31, 'Training Classes': 32, 'Transport': 33, 'Tree Services': 34, 'Water Softener Shop': 35, 'Welder': 36, 'Well Drilling': 37}
+
+
+    industry_mapping = {
+    'Box Creator': 0, 'Car Mechanic': 1, 'Cleaning': 2, 'Clinic': 3, 'Concrete': 4, 
+    'Construction': 5, 'Dentist': 6, 'Disposal': 7, 'Doors & Windows': 8, 
+    'Electrician': 9, 'Excavator': 10, 'Exterminator': 11, 'Flooring': 12, 
+    'Glass': 13, 'Home Cabinets': 14, 'Home Designer': 15, 'Home Inspection': 16, 
+    'Hvac': 17, 'Insulation': 18, 'Landscaper': 19, 'Lawyer': 20, 'Lighting': 21, 
+    'Machine Shop': 22, 'Moving Services': 23, 'Other Industries': 24, 'Painter': 25, 
+    'Paving': 26, 'Plumber': 27, 'Printer Contractor': 28, 'Renovation': 29, 
+    'Roofer': 30, 'Tools': 31, 'Training Classes': 32, 'Transport': 33, 
+    'Tree Services': 34, 'Water Softener Shop': 35, 'Welder': 36, 'Well Drilling': 37
+    }
+
+    Industry = st.selectbox(
+    "Select The Industry of Their Campaign:",
+    list(industry_mapping.keys()) )  # Display industry names in the dropdown
     
     # Make predictions based on input
     if st.button("Predict Conversions"):
      input_data = pd.DataFrame({
-            "Clicks": [clicks2],
-            "Avg. CPC": [avg_cpc],
-            "Impr.": [impressions],
+            "Cost": [Cost],
+            "Location": [Location],
+            "Industry": [Industry],
         })
     
      predicted_conversions2 = model.predict(input_data)
