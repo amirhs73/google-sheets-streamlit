@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import pickle
 import numpy as np
-import os
+
 
 
 
@@ -12,6 +12,13 @@ st.image(logo, width = 200)
 st.title("Google Ads Predictor")
 
 
+def load_model():
+    model_path = "random_forest_model.pkl"
+    with open(model_path, "rb") as file:
+     model = pickle.load(file)
+    return model
+
+model = load_model()
 
 
 
