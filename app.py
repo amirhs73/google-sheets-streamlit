@@ -15,8 +15,6 @@ st.title("Google Ads Predictor")
 
 
 
-model = load_model()
-
 
 option = st.selectbox(
     "What would you like to do?",
