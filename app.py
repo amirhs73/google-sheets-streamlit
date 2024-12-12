@@ -109,7 +109,7 @@ if option == "1. Predict Cost Per Click, and Conversions (Performance Max Includ
 
 
 
-if "2. Predict Cost Per Click, and Conversions (Search Campaign Only)":
+if option == "2. Predict Cost Per Click, and Conversions (Search Campaign Only)":
     st.header("Predict Number of Potential Clicks, Cost Per Click And Conversions")
     st.write("Enter the values for the following inputs to predict the outcome:")
     
