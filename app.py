@@ -42,7 +42,7 @@ if option == "1. Predict Cost Per Click, and Conversions (Performance Max Includ
     #clicks2 = st.number_input("Number of Clicks", min_value=0)
     #avg_cpc = st.number_input("Average Cost Per Click", min_value=0.0, format="%.2f")
     
-    Cost = st.number_input("How Much The Client Wants To Spend Per Month?", min_value=0)
+    #Cost = st.number_input("How Much The Client Wants To Spend Per Month?", min_value=0)
 
     location_mapping = { 'Toronto, Montreal, Vancouver or USA' : 1, 'Brossard, Longueuil, Rive Sud, Laval, West Island, Hamilton, Ottawa, Quebec City, Oshawa, Kitchener, Edmonton, Winnipeg, Calgary, Victoria': 2, 
      'All Other Places (Less Populated Cities and Rural Areas)': 3}
@@ -119,7 +119,7 @@ if option == "2. Predict Cost Per Click, and Conversions (Search Campaign Only)"
     #clicks2 = st.number_input("Number of Clicks", min_value=0)
     #avg_cpc = st.number_input("Average Cost Per Click", min_value=0.0, format="%.2f")
     
-    Cost = st.number_input("How Much The Client Wants To Spend Per Month?", min_value=0)
+    #Cost = st.number_input("How Much The Client Wants To Spend Per Month?", min_value=0)
 
     location_mapping = { 'Toronto, Montreal, Vancouver or USA' : 1, 'Brossard, Longueuil, Rive Sud, Laval, West Island, Hamilton, Ottawa, Quebec City, Oshawa, Kitchener, Edmonton, Winnipeg, Calgary, Victoria': 2, 
      'All Other Places (Less Populated Cities and Rural Areas)': 3}
