@@ -11,19 +11,8 @@ logo = "images.png"
 st.image(logo, width = 200)
 
 st.title("Google Ads Predictor")
-def load_model():
-    model_path1 = "random_forest_model.pkl"
-    with open(model_path1, "rb") as file:
-        model = joblib.load("random_forest_model.pkl")
-    return model
-def load_model2():
-    model_path2 = "random_forest_model_campaign.pkl"
-    with open(model_path2, "rb") as file:
-        model2 = joblib.load("random_forest_model_campaign.pkl")
-    return model2
-model = load_model()
 
-model2 = load_model2()
+
 
 
 
@@ -39,6 +28,12 @@ option = st.selectbox(
 
 # Option 1: View Dataset Summary
 if option == "1. Predict Cost Per Click, and Conversions (Performance Max Included)":
+    def load_model():
+    model_path1 = "random_forest_model.pkl"
+    with open(model_path1, "rb") as file:
+        model = joblib.load("random_forest_model.pkl")
+    return model
+    model = load_model()
     st.header("Predict Number of Potential Clicks, Cost Per Click And Conversions")
     st.write("Enter the values for the following inputs to predict the outcome:")
     
@@ -110,6 +105,12 @@ if option == "1. Predict Cost Per Click, and Conversions (Performance Max Includ
 
 
 if option == "2. Predict Cost Per Click, and Conversions (Search Campaign Only)":
+    def load_model2():
+    model_path2 = "random_forest_model_campaign.pkl"
+    with open(model_path2, "rb") as file:
+        model2 = joblib.load("random_forest_model_campaign.pkl")
+    return model2
+    model2 = load_model2()
     st.header("Predict Number of Potential Clicks, Cost Per Click And Conversions")
     st.write("Enter the values for the following inputs to predict the outcome:")
     
