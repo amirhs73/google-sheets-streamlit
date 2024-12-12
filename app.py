@@ -32,7 +32,7 @@ if option == "1. Predict Cost Per Click, and Conversions (Performance Max Includ
      model_path1 = "random_forest_model.pkl"
      with open(model_path1, "rb") as file:
         model = joblib.load("random_forest_model.pkl")
-    return model
+     return model
     model = load_model()
     st.header("Predict Number of Potential Clicks, Cost Per Click And Conversions")
     st.write("Enter the values for the following inputs to predict the outcome:")
@@ -109,7 +109,7 @@ if option == "2. Predict Cost Per Click, and Conversions (Search Campaign Only)"
      model_path2 = "random_forest_model_campaign.pkl"
      with open(model_path2, "rb") as file:
         model2 = joblib.load("random_forest_model_campaign.pkl")
-    return model2
+     return model2
     model2 = load_model2()
     st.header("Predict Number of Potential Clicks, Cost Per Click And Conversions")
     st.write("Enter the values for the following inputs to predict the outcome:")
