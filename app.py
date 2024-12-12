@@ -163,7 +163,7 @@ if option == "2. Predict Cost Per Click, and Conversions (Search Campaign Only)"
     
      predicted_conversions2 = model2.predict(input_data)
       # Get individual tree predictions
-     tree_predictions = np.array([tree.predict(input_data)[0] for tree in model.estimators_])
+     tree_predictions = np.array([tree.predict(input_data)[0] for tree in model2.estimators_])
         
         # Calculate the mean prediction
      mean_prediction = np.mean(tree_predictions)
