@@ -19,7 +19,7 @@ def load_model():
 def load_model2():
     model_path = "random_forest_model_campaign.pkl"
     with open(model_path, "rb") as file:
-        model = joblib.load("random_forest_model.pkl")
+        model = joblib.load("random_forest_model_campaign.pkl")
     return model
 model = load_model()
 
@@ -161,7 +161,7 @@ if "2. Predict Cost Per Click, and Conversions (Search Campaign Only)":
             "Industry_encoded": [numeric_industry],
         })
     
-     predicted_conversions2 = model.predict(input_data)
+     predicted_conversions2 = model2.predict(input_data)
       # Get individual tree predictions
      tree_predictions = np.array([tree.predict(input_data)[0] for tree in model.estimators_])
         
