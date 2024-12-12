@@ -27,13 +27,14 @@ option = st.selectbox(
     "What would you like to do?",
     (
         "Select an option",
-        "1. Predict Number of Potential Clicks, Cost Per Click, and Conversions",
-        "2. Predict the Best Keywords"
+        "1. Predict Cost Per Click, and Conversions (Performance Max Included)",
+        "2. Predict Cost Per Click, and Conversions (Search Campaign Only)",
+        "3. Predict the Best Keywords"
     ),
 )
 
 # Option 1: View Dataset Summary
-if option == "1. Predict Number of Potential Clicks, Cost Per Click, and Conversions":
+if option == "1. Predict Cost Per Click, and Conversions (Performance Max Included)":
     st.header("Predict Number of Potential Clicks, Cost Per Click And Conversions")
     st.write("Enter the values for the following inputs to predict the outcome:")
     
@@ -102,7 +103,7 @@ if option == "1. Predict Number of Potential Clicks, Cost Per Click, and Convers
      st.success(f"Predicted CPC: {mean_prediction:.2f}")
      st.write(f"Prediction Interval: [{lower_bound:.2f}, {upper_bound:.2f}]")
    
-if option == "2. Predict the Best Keywords":
+if option == "3. Predict the Best Keywords":
     
     st.header("In Production ...")
     
