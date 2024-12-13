@@ -16,8 +16,8 @@ st.title("Google Ads Predictor")
 
 
 
-download_url = f"https://drive.google.com/file/d/1ZzDxojj59la2ahxLtvv3UPpXbbBkKZX-/view?usp=drive_link"
 
+download_url = "https://drive.google.com/uc?id=1ZzDxojj59la2ahxLtvv3UPpXbbBkKZX-"
 # Download the model
 model_file = "random_forest_model_conversions.pkl"
 
