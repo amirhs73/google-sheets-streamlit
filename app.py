@@ -27,7 +27,7 @@ if not os.path.exists(model_file):
 
 # Load the Random Forest model
 with open(model_file, "rb") as file:
-    model3 = pickle.load(file)
+    model3 = joblib.load(file)
 
 
 
