@@ -64,7 +64,7 @@ if option == "1. Predict Cost Per Click (Performance Max Included)":
     #clicks2 = st.number_input("Number of Clicks", min_value=0)
     #avg_cpc = st.number_input("Average Cost Per Click", min_value=0.0, format="%.2f")
     
-    #Cost = st.number_input("How Much The Client Wants To Spend Per Month?", min_value=0)
+    Cost = st.number_input("How Much The Client Wants To Spend Per Month?", min_value=0)
 
     location_mapping = { 'Toronto, Montreal, Vancouver or USA' : 1, 'Brossard, Longueuil, Rive Sud, Laval, West Island, Hamilton, Ottawa, Quebec City, Oshawa, Kitchener, Edmonton, Winnipeg, Calgary, Victoria': 2, 
      'All Other Places (Less Populated Cities and Rural Areas)': 3}
@@ -100,45 +100,66 @@ if option == "1. Predict Cost Per Click (Performance Max Included)":
     list(industry_mapping.keys()) )  # Display industry names in the dropdown
     numeric_industry = industry_mapping[Industry]
     # Make predictions based on input
-    if st.button("Predict Conversions"):
-     input_data = pd.DataFrame({
+    
+    input_data = pd.DataFrame({
             "Season_encoded": [numeric_season],
             "Location ID": [numeric_location],
             "Industry_encoded": [numeric_industry],
         })
-    
-     predicted_conversions2 = model.predict(input_data)
+    input_data2 = pd.DataFrame({
+            "Season_encoded": [numeric_season],
+            "Location ID": [numeric_location],
+            "Industry_encoded": [numeric_industry],
+            "Cost": [Cost],
+        })
+    predicted_conversions2 = model.predict(input_data)
       # Get individual tree predictions
-     tree_predictions = np.array([tree.predict(input_data)[0] for tree in model.estimators_])
+    tree_predictions = np.array([tree.predict(input_data)[0] for tree in model.estimators_])
         
         # Calculate the mean prediction
-     mean_prediction = np.mean(tree_predictions)
+    mean_prediction = np.mean(tree_predictions)
 
         # Calculate the prediction interval
-     lower_bound = mean_prediction - np.std(tree_predictions) * 0.25  # Approx. 95% confidence
-     if lower_bound<0:
+    lower_bound = mean_prediction - np.std(tree_predictions) * 0.25  # Approx. 95% confidence
+    if lower_bound<0:
          lower_bound = 0
-     upper_bound = mean_prediction + np.std(tree_predictions) * 0.25 
+    upper_bound = mean_prediction + np.std(tree_predictions) * 0.25 
 
         # Display results
-     st.success(f"Predicted CPC: {mean_prediction:.2f}")
-     st.write(f"Prediction Interval: [{lower_bound:.2f}, {upper_bound:.2f}]")
-     predicted_conversions3 = model2.predict(input_data)
+    st.success(f"Predicted CPC for the whole account: {mean_prediction:.2f}")
+    st.write(f"Prediction Interval: [{lower_bound:.2f}, {upper_bound:.2f}]")
+    predicted_conversions3 = model2.predict(input_data)
       # Get individual tree predictions
-     tree_predictions2 = np.array([tree.predict(input_data)[0] for tree in model2.estimators_])
+    tree_predictions2 = np.array([tree.predict(input_data)[0] for tree in model2.estimators_])
         
         # Calculate the mean prediction
-     mean_prediction2 = np.mean(tree_predictions2)
+    mean_prediction2 = np.mean(tree_predictions2)
 
         # Calculate the prediction interval
-     lower_bound2 = mean_prediction2 - np.std(tree_predictions2) * 0.25  # Approx. 95% confidence
-     if lower_bound2<0:
+    lower_bound2 = mean_prediction2 - np.std(tree_predictions2) * 0.25  # Approx. 95% confidence
+    if lower_bound2<0:
          lower_bound2 = 0
-     upper_bound2 = mean_prediction2 + np.std(tree_predictions2) * 0.25 
+    upper_bound2 = mean_prediction2 + np.std(tree_predictions2) * 0.25 
 
         # Display results
-     st.success(f"Predicted CPC: {mean_prediction2:.2f}")
-     st.write(f"Prediction Interval: [{lower_bound2:.2f}, {upper_bound2:.2f}]")
+    st.success(f"Predicted CPC for search campaigns: {mean_prediction2:.2f}")
+    st.write(f"Prediction Interval: [{lower_bound2:.2f}, {upper_bound2:.2f}]")
+    predicted_conversions4 = model3.predict(input_data2)
+      # Get individual tree predictions
+    tree_predictions3 = np.array([tree.predict(input_data)[0] for tree in model2.estimators_])
+        
+        # Calculate the mean prediction
+    mean_prediction3 = np.mean(tree_predictions3)
+
+        # Calculate the prediction interval
+    lower_bound3 = mean_prediction3 - np.std(tree_predictions3) * 0.25  # Approx. 95% confidence
+    if lower_bound3<0:
+         lower_bound3 = 0
+    upper_bound3 = mean_prediction3 + np.std(tree_predictions3) * 0.25 
+
+        # Display results
+    st.success(f"Predicted Conversions: {mean_prediction3:.2f}")
+    st.write(f"Prediction Interval: [{lower_bound3:.2f}, {upper_bound3:.2f}]")
 
 
 
