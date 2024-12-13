@@ -36,14 +36,13 @@ option = st.selectbox(
     "What would you like to do?",
     (
         "Select an option",
-        "1. Predict Cost Per Click (Performance Max Included)",
-        "2. Predict Cost Per Click (Search Campaign Only)",
-        "3. Predict the Best Keywords"
+        "1. Account Predictions",
+        "2. Predict the Best Keywords"
     ),
 )
 
 # Option 1: View Dataset Summary
-if option == "1. Predict Cost Per Click (Performance Max Included)":
+if option == "1. Account Predictions":
     def load_model():
      model_path1 = "random_forest_model.pkl"
      with open(model_path1, "rb") as file:
@@ -146,7 +145,7 @@ if option == "1. Predict Cost Per Click (Performance Max Included)":
     st.write(f"Prediction Interval: [{lower_bound2:.2f}, {upper_bound2:.2f}]")
     predicted_conversions4 = model3.predict(input_data2)
       # Get individual tree predictions
-    tree_predictions3 = np.array([tree.predict(input_data)[0] for tree in model2.estimators_])
+    tree_predictions3 = np.array([tree.predict(input_data2)[0] for tree in model3.estimators_])
         
         # Calculate the mean prediction
     mean_prediction3 = np.mean(tree_predictions3)
