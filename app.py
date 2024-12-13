@@ -25,9 +25,7 @@ if not os.path.exists(model_file):
     with st.spinner("Downloading the model..."):
         gdown.download(download_url, model_file, quiet=False)
 
-# Load the Random Forest model
-with open(model_file, "rb") as file:
-    model3 = joblib.load(file)
+
 
 
 
