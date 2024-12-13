@@ -27,7 +27,7 @@ if not os.path.exists(model_file):
 
 # Load the Random Forest model
 with open(model_file, "rb") as file:
-    model3 = joblib.load(model_file)
+    model3 = joblib.load("random_forest_model_conversions.pkl")
 
 
 
