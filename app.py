@@ -144,8 +144,8 @@ if option == "1. Account Predictions":
      lower_pr_clicks = Cost/upper_bound2
         # Display results
      #st.success(f"Predicted CPC for search campaigns: {mean_prediction2:.2f}")
-     st.write(f"The predicted CPC for the search campaigns is between [{lower_bound2:.2f}] and [{upper_bound2:.2f}]")
-     st.write(f"They could have between [{lower_pr_clicks:.2f}] and [{upper_pr_clicks:.2f}] number of clicks")
+     st.write(f"The predicted CPC for the search campaigns is between {lower_bound2:.2f} and {upper_bound2:.2f}")
+     st.write(f"They could have between {lower_pr_clicks:.2f} and {upper_pr_clicks:.2f} number of clicks")
         
      predicted_conversions4 = model3.predict(input_data2)
       # Get individual tree predictions
@@ -162,7 +162,7 @@ if option == "1. Account Predictions":
 
         # Display results
      #st.success(f"Predicted Conversions: {mean_prediction3:.2f}")
-     st.write(f"The predicted conversions is between [{lower_bound3:.2f}] and [{upper_bound3:.2f}]")
+     st.write(f"The predicted conversions is between {lower_bound3:.2f} and {upper_bound3:.2f}")
      
 
 
