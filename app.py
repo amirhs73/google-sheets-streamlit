@@ -36,13 +36,13 @@ option = st.selectbox(
     "What would you like to do?",
     (
         "Select an option",
-        "1. Account Predictions",
+        "1. New Sale Predictions",
         "2. Predict the Best Keywords"
     ),
 )
 
 # Option 1: View Dataset Summary
-if option == "1. Account Predictions":
+if option == "1. New Sale Predictions":
     def load_model():
      model_path1 = "random_forest_model.pkl"
      with open(model_path1, "rb") as file:
@@ -55,7 +55,7 @@ if option == "1. Account Predictions":
         model2 = joblib.load("random_forest_model_campaign.pkl")
      return model2
     model2 = load_model2()
-    st.header("Predict Cost Per Click (Performance Max Included)")
+    st.header("1. New Sale Predictions")
     st.write("Enter the values for the following inputs to predict the outcome:")
     
 
@@ -145,7 +145,7 @@ if option == "1. Account Predictions":
         # Display results
      #st.success(f"Predicted CPC for search campaigns: {mean_prediction2:.2f}")
      st.write(f"The predicted CPC for the search campaigns is between {lower_bound2:.2f} and {upper_bound2:.2f}")
-     st.write(f"They could have between {lower_pr_clicks:.2f} and {upper_pr_clicks:.2f} number of clicks")
+     st.write(f"They could have between {lower_pr_clicks:.2f} and {upper_pr_clicks:.2f} number of clicks for this budget")
         
      predicted_conversions4 = model3.predict(input_data2)
       # Get individual tree predictions
