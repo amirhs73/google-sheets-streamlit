@@ -140,8 +140,8 @@ if option == "1. New Sale Predictions":
      if lower_bound2<0:
          lower_bound2 = 0
      upper_bound2 = mean_prediction2 + np.std(tree_predictions2) * 0.25 
-     upper_pr_clicks = Cost/lower_bound2
-     lower_pr_clicks = Cost/upper_bound2
+     upper_pr_clicks = Cost*0.675/lower_bound2
+     lower_pr_clicks = Cost*0.675/upper_bound2
         # Display results
      #st.success(f"Predicted CPC for search campaigns: {mean_prediction2:.2f}")
      st.write(f"The predicted CPC for the search campaigns is between {lower_bound2:.2f} and {upper_bound2:.2f}")
