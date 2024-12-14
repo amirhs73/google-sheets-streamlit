@@ -126,8 +126,8 @@ if option == "1. Account Predictions":
      upper_bound = mean_prediction + np.std(tree_predictions) * 0.25 
 
         # Display results
-     st.success(f"Predicted CPC for the whole account: {mean_prediction:.2f}")
-     st.write(f"Prediction Interval: [{lower_bound:.2f}, {upper_bound:.2f}]")
+     #st.success(f"Predicted CPC for the whole account: {mean_prediction:.2f}")
+     #st.write(f"The predicted CPC is between [{lower_bound:.2f}] and [{upper_bound:.2f}]")
      predicted_conversions3 = model2.predict(input_data)
       # Get individual tree predictions
      tree_predictions2 = np.array([tree.predict(input_data)[0] for tree in model2.estimators_])
@@ -140,10 +140,13 @@ if option == "1. Account Predictions":
      if lower_bound2<0:
          lower_bound2 = 0
      upper_bound2 = mean_prediction2 + np.std(tree_predictions2) * 0.25 
-
+     upper_pr_clicks = Cost/lower_bound2
+     lower_pr_clicks = Cost/upper_bound2
         # Display results
-     st.success(f"Predicted CPC for search campaigns: {mean_prediction2:.2f}")
-     st.write(f"Prediction Interval: [{lower_bound2:.2f}, {upper_bound2:.2f}]")
+     #st.success(f"Predicted CPC for search campaigns: {mean_prediction2:.2f}")
+     st.write(f"The predicted CPC for the search campaigns is between [{lower_bound2:.2f}] and [{upper_bound2:.2f}]")
+     st.write(f"They could have between [{lower_pr_clicks:.2f}] and [{upper_pr_clicks:.2f}] number of clicks")
+        
      predicted_conversions4 = model3.predict(input_data2)
       # Get individual tree predictions
      tree_predictions3 = np.array([tree.predict(input_data2)[0] for tree in model3.estimators_])
@@ -158,9 +161,9 @@ if option == "1. Account Predictions":
      upper_bound3 = mean_prediction3 + np.std(tree_predictions3) * 0.25 
 
         # Display results
-     st.success(f"Predicted Conversions: {mean_prediction3:.2f}")
-     st.write(f"Prediction Interval: [{lower_bound3:.2f}, {upper_bound3:.2f}]")
-
+     #st.success(f"Predicted Conversions: {mean_prediction3:.2f}")
+     st.write(f"The predicted conversions is between [{lower_bound3:.2f}] and [{upper_bound3:.2f}]")
+     
 
 
 if option == "3. Predict the Best Keywords":
