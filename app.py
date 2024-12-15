@@ -180,7 +180,7 @@ if option == "2. Top Keywords Analysis by Industry":
             industry_data = data2[data2['Industry'] == selected_industry]
             
             # Find top keywords (sorted by score)
-            top_keywords = industry_data.sort_values(by='Score', ascending=False).head(5)
+            top_keywords = industry_data.sort_values(by='Score', ascending=False).head(15)
             
             # Display top keywords
             st.header(f"Top Keywords for {selected_industry}")
