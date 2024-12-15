@@ -168,23 +168,23 @@ if option == "1. New Sale Predictions":
 
 if option == "2. Top Keywords Analysis by Industry":
     conversion_weight = 100
-    conversion_rate_threshold = 10
-    min_clicks = 300
+    conversion_rate_threshold = st.number_input("Write the threshold for the conversion rate (between 0 and 100) ", min_value=0)
+    min_clicks = st.number_input("Write the threshold for the number of clicks", min_value=0)
     st.title("Top Keywords Analysis by Industry")
     file_path = "Keyword_analysis.csv"
     data2 = pd.read_csv(file_path)
-
+    if st.button("Show the keywords"):
         
-    industry_options = sorted(data2['Industry'].unique())
-    selected_industry = st.selectbox("Select your industry:", industry_options)
-    averaged_data = data2.groupby(['Industry', 'Keyword'], as_index=False).agg({
+     industry_options = sorted(data2['Industry'].unique())
+     selected_industry = st.selectbox("Select your industry:", industry_options)
+     averaged_data = data2.groupby(['Industry', 'Keyword'], as_index=False).agg({
             'Clicks': 'mean',    # Calculate average of Clicks
             'Conversions': 'mean'  # Calculate average of Conversions
         })
-    averaged_data['Conversion Rate'] = (averaged_data['Conversions'] / averaged_data['Clicks']) * 100
-    averaged_data['Score'] = averaged_data['Conversions'] * conversion_weight + averaged_data['Clicks']
-    averaged_data = averaged_data[(averaged_data['Conversion Rate'] >= conversion_rate_threshold) & (averaged_data['Clicks'] >= min_clicks)]
-    if selected_industry:
+     averaged_data['Conversion Rate'] = (averaged_data['Conversions'] / averaged_data['Clicks']) * 100
+     averaged_data['Score'] = averaged_data['Conversions'] * conversion_weight + averaged_data['Clicks']
+     averaged_data = averaged_data[(averaged_data['Conversion Rate'] >= conversion_rate_threshold) & (averaged_data['Clicks'] >= min_clicks)]
+     if selected_industry:
             # Filter data for the selected industry
             industry_data = averaged_data[averaged_data['Industry'] == selected_industry]
             
