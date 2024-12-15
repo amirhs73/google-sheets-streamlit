@@ -183,7 +183,7 @@ if option == "2. Top Keywords Analysis by Industry":
         })
     averaged_data['Conversion Rate'] = (averaged_data['Conversions'] / averaged_data['Clicks']) * 100
     averaged_data['Score'] = averaged_data['Conversions'] * conversion_weight + averaged_data['Clicks']
-    averaged_data = averaged_data[(averaged_data['Conversion Rate'] >= conversion_rate_threshold) & (data['Clicks'] >= min_clicks)]
+    averaged_data = averaged_data[(averaged_data['Conversion Rate'] >= conversion_rate_threshold) & (averaged_data['Clicks'] >= min_clicks)]
     if selected_industry:
             # Filter data for the selected industry
             industry_data = averaged_data[averaged_data['Industry'] == selected_industry]
