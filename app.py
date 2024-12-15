@@ -167,10 +167,12 @@ if option == "1. New Sale Predictions":
 
 
 if option == "2. Top Keywords Analysis by Industry":
+     st.title("Top Keywords Analysis by Industry")
     conversion_weight = 100
     conversion_rate_threshold = st.number_input("Write the threshold for the conversion rate (between 0 and 100) ", min_value=0)
     min_clicks = st.number_input("Write the threshold for the number of clicks", min_value=0)
-    st.title("Top Keywords Analysis by Industry")
+    selected_industry = st.selectbox("Select your industry:", industry_options)
+  
     file_path = "Keyword_analysis.csv"
     data2 = pd.read_csv(file_path)
     if st.button("Show the keywords"):
@@ -189,7 +191,7 @@ if option == "2. Top Keywords Analysis by Industry":
             industry_data = averaged_data[averaged_data['Industry'] == selected_industry]
             
             # Find top keywords (sorted by score)
-            top_keywords = industry_data.sort_values(by='Conversion Rate', ascending=False).head(15)
+            top_keywords = industry_data.sort_values(by='Conversion Rate', ascending=False)
             
             # Display top keywords
             st.header(f"Top Keywords for {selected_industry}")
