@@ -173,11 +173,11 @@ if option == "2. Top Keywords Analysis by Industry":
     data2 = pd.read_csv(file_path)
     data2['Score'] = data2['Conversions'] * conversion_weight + data2['Clicks']
         
-    industry_options = sorted(data['Industry'].unique())
+    industry_options = sorted(data2['Industry'].unique())
     selected_industry = st.selectbox("Select your industry:", industry_options)
     if selected_industry:
             # Filter data for the selected industry
-            industry_data = data[data['Industry'] == selected_industry]
+            industry_data = data2[data2['Industry'] == selected_industry]
             
             # Find top keywords (sorted by score)
             top_keywords = industry_data.sort_values(by='Score', ascending=False).head(5)
