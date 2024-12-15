@@ -193,6 +193,9 @@ if option == "2. Top Keywords Analysis by Industry":
             
             # Find top keywords (sorted by score)
             top_keywords = industry_data.sort_values(by='Conversion Rate', ascending=False)
+            top_keywords[['Clicks', 'Conversions', 'Conversion Rate']] = top_keywords[
+            ['Clicks', 'Conversions', 'Conversion Rate']
+            ].applymap(lambda x: f"{x:.2f}" if isinstance(x, (float, int)) else x)
             
             # Display top keywords
             st.header(f"Top Keywords for {selected_industry}")
