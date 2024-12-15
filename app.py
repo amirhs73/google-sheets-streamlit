@@ -168,6 +168,8 @@ if option == "1. New Sale Predictions":
 
 if option == "2. Top Keywords Analysis by Industry":
     conversion_weight = 100
+    conversion_rate_threshold = 10
+    min_clicks = 100
     st.title("Top Keywords Analysis by Industry")
     file_path = "Keyword_analysis.csv"
     data2 = pd.read_csv(file_path)
@@ -179,14 +181,16 @@ if option == "2. Top Keywords Analysis by Industry":
             'Clicks': 'mean',    # Calculate average of Clicks
             'Conversions': 'mean'  # Calculate average of Conversions
         })
+    averaged_data['Conversion Rate'] = (averaged_data['Conversions'] / averaged_data['Clicks']) * 100
     averaged_data['Score'] = averaged_data['Conversions'] * conversion_weight + averaged_data['Clicks']
+    averaged_data = averaged_data[(averaged_data['Conversion Rate'] >= conversion_rate_threshold) & (data['Clicks'] >= min_clicks)]
     if selected_industry:
             # Filter data for the selected industry
             industry_data = averaged_data[averaged_data['Industry'] == selected_industry]
             
             # Find top keywords (sorted by score)
-            top_keywords = industry_data.sort_values(by='Score', ascending=False).head(15)
+            top_keywords = industry_data.sort_values(by='Conversion Rate', ascending=False).head(15)
             
             # Display top keywords
             st.header(f"Top Keywords for {selected_industry}")
-            st.dataframe(top_keywords[['Keyword', 'Clicks', 'Conversions', 'Score']])
+            st.dataframe(top_keywords[['Keyword', 'Clicks', 'Conversions', 'Conversion Rate']])
