@@ -37,7 +37,7 @@ option = st.selectbox(
     (
         "Select an option",
         "1. New Sale Predictions",
-        "2. Predict the Best Keywords"
+        "2. Top Keywords Analysis by Industry"
     ),
 )
 
@@ -166,11 +166,22 @@ if option == "1. New Sale Predictions":
      
 
 
-if option == "2. Predict the Best Keywords":
-    
-    st.header("In Production ...")
-    
-
-
-
-
+if option == "2. Top Keywords Analysis by Industry":
+    conversion_weight = 10
+    st.title("Top Keywords Analysis by Industry")
+    file_path = "Keyword_analysis.csv"
+    data2 = pd.read_csv(file_path)
+    data2['Score'] = data2['Conversions'] * conversion_weight + data2['Clicks']
+        
+    industry_options = sorted(data['Industry'].unique())
+    selected_industry = st.selectbox("Select your industry:", industry_options)
+    if selected_industry:
+            # Filter data for the selected industry
+            industry_data = data[data['Industry'] == selected_industry]
+            
+            # Find top keywords (sorted by score)
+            top_keywords = industry_data.sort_values(by='Score', ascending=False).head(5)
+            
+            # Display top keywords
+            st.header(f"Top Keywords for {selected_industry}")
+            st.dataframe(top_keywords[['Keyword', 'Clicks', 'Conversions', 'Score']])
