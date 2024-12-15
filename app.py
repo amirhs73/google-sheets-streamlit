@@ -182,7 +182,7 @@ if option == "2. Top Keywords Analysis by Industry":
     averaged_data['Score'] = averaged_data['Conversions'] * conversion_weight + averaged_data['Clicks']
     if selected_industry:
             # Filter data for the selected industry
-            industry_data = data2[data2['Industry'] == selected_industry]
+            industry_data = averaged_data[averaged_data['Industry'] == selected_industry]
             
             # Find top keywords (sorted by score)
             top_keywords = industry_data.sort_values(by='Score', ascending=False).head(15)
