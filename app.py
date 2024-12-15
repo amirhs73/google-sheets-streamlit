@@ -167,7 +167,7 @@ if option == "1. New Sale Predictions":
 
 
 if option == "2. Top Keywords Analysis by Industry":
-    conversion_weight = 10
+    conversion_weight = 100
     st.title("Top Keywords Analysis by Industry")
     file_path = "Keyword_analysis.csv"
     data2 = pd.read_csv(file_path)
