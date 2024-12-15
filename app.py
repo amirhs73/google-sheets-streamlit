@@ -199,4 +199,6 @@ if option == "2. Top Keywords Analysis by Industry":
             
             # Display top keywords
             st.header(f"Top Keywords for {selected_industry}")
+        
             st.dataframe(top_keywords[['Keyword', 'Clicks', 'Conversions', 'Conversion Rate']])
+            st.success(f"Select other near industries if you can't find your keyword")
