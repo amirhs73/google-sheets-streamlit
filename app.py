@@ -171,14 +171,15 @@ if option == "2. Top Keywords Analysis by Industry":
     conversion_weight = 100
     conversion_rate_threshold = st.number_input("Write the threshold for the conversion rate (between 0 and 100) ", min_value=0)
     min_clicks = st.number_input("Write the threshold for the number of clicks", min_value=0)
-    selected_industry = st.selectbox("Select your industry:", industry_options)
+  
   
     file_path = "Keyword_analysis.csv"
     data2 = pd.read_csv(file_path)
+    industry_options = sorted(data2['Industry'].unique())
+    selected_industry = st.selectbox("Select your industry:", industry_options)
     if st.button("Show the keywords"):
         
-     industry_options = sorted(data2['Industry'].unique())
-     selected_industry = st.selectbox("Select your industry:", industry_options)
+     
      averaged_data = data2.groupby(['Industry', 'Keyword'], as_index=False).agg({
             'Clicks': 'mean',    # Calculate average of Clicks
             'Conversions': 'mean'  # Calculate average of Conversions
