@@ -171,10 +171,15 @@ if option == "2. Top Keywords Analysis by Industry":
     st.title("Top Keywords Analysis by Industry")
     file_path = "Keyword_analysis.csv"
     data2 = pd.read_csv(file_path)
-    data2['Score'] = data2['Conversions'] * conversion_weight + data2['Clicks']
+
         
     industry_options = sorted(data2['Industry'].unique())
     selected_industry = st.selectbox("Select your industry:", industry_options)
+    averaged_data = data2.groupby(['Industry', 'Keyword'], as_index=False).agg({
+            'Clicks': 'mean',    # Calculate average of Clicks
+            'Conversions': 'mean'  # Calculate average of Conversions
+        })
+    averaged_data['Score'] = averaged_data['Conversions'] * conversion_weight + averaged_data['Clicks']
     if selected_industry:
             # Filter data for the selected industry
             industry_data = data2[data2['Industry'] == selected_industry]
