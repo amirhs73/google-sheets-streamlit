@@ -167,7 +167,7 @@ if option == "1. New Sale Predictions":
 
 
 if option == "2. Top Keywords Analysis by Industry":
-    st.title("Top Keywords Analysis by Industry")
+    st.header("2. Top Keywords Analysis by Industry")
     conversion_weight = 100
     conversion_rate_threshold = st.number_input("Type the threshold for the conversion rate (between 0 and 100) ", min_value=0)
     min_clicks = st.number_input("Type the threshold for the number of clicks", min_value=0)
